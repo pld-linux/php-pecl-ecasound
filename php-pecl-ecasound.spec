@@ -1,0 +1,63 @@
+%define		_modname	ecasound
+%define		_modname_c	Ecasound
+%define		_status		beta
+Summary:	%{_modname} - provides audio recording and processing functions
+Summary(pl):	%{_modname} - dostarcza funkcji do nagrywania i przetwarzania d¼wiêku
+Name:		php-pecl-%{_modname}
+Version:	0.2
+Release:	1
+License:	PHP 
+Group:		Development/Languages/PHP
+Source0:	http://pecl.php.net/get/%{_modname_c}-%{version}.tgz
+# Source0-md5:	002e7bb8c0f018bb41cefc71e5f9f54b
+Patch0:		%{name}-search_path.patch
+URL:		http://pecl.php.net/package/ecasound/
+BuildRequires:	libtool
+BuildRequires:	php-devel
+Requires:	php-common
+Obsoletes:	php-pear-%{_modname}
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		_sysconfdir	/etc/php
+%define		extensionsdir	%{_libdir}/php
+
+%description
+This extension wraps the Ecasound libraries to provide advanced audio
+processing capabilities.
+
+This extension has in PEAR status: %{_status}.
+
+#%description -l pl
+#
+#To rozszerzenie ma w PEAR status: %{_status}.
+
+%prep
+%setup -q -c
+%patch0 -p0
+
+%build
+cd %{_modname_c}-%{version}
+phpize
+%configure 
+%{__make}
+
+%install
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{extensionsdir}
+
+install %{_modname_c}-%{version}/modules/%{_modname}.so $RPM_BUILD_ROOT%{extensionsdir}
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%post
+%{_sbindir}/php-module-install install %{_modname} %{_sysconfdir}/php-cgi.ini
+
+%preun
+if [ "$1" = "0" ]; then
+	%{_sbindir}/php-module-install remove %{_modname} %{_sysconfdir}/php-cgi.ini
+fi
+
+%files
+%defattr(644,root,root,755)
+%attr(755,root,root) %{extensionsdir}/%{_modname}.so
