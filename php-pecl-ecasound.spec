@@ -27,13 +27,13 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 This extension wraps the Ecasound libraries to provide advanced audio
 processing capabilities.
 
-This extension has in PEAR status: %{_status}.
+In PECL status of this package is: %{_status}.
 
 %description -l pl
 To rozszerzenie opakowuje biblioteki Ecasound, aby dostarczyæ
 zaawansowane mo¿liwo¶ci przetwarzania d¼wiêku.
 
-To rozszerzenie ma w PEAR status: %{_status}.
+To rozszerzenie ma w PECL status: %{_status}.
 
 %prep
 %setup -q -c
