@@ -1,0 +1,11 @@
+--- Ecasound-0.2/config.m4~	2003-01-14 21:11:59.000000000 +0000
++++ Ecasound-0.2/config.m4	2003-10-21 10:25:18.000000000 +0000
+@@ -4,7 +4,7 @@
+ 
+ if test "$PHP_ECASOUND" != "no"; then
+ 
+-SEARCH_PATH="/usr/local/include/ecasound /usr/local/include/libecasoundc"     # you might want to change this
++SEARCH_PATH="/usr/include/libecasound /usr/include/libecasoundc"     # you might want to change this
+ SEARCH_FOR="ecasoundc.h"  # you most likely want to change this
+ if test -r $PHP_ECASOUND/; then # path given as parameter
+   ECASOUND=$PHP_ECASOUND
