@@ -1,6 +1,7 @@
+%define		_modname	ecasound
 Summary:	PHP wrapper to the Ecasound Library
 Summary(pl):	PHP-owy wrapper do biblioteki Ecasound
-Name:		php-pecl-ecasound
+Name:		php-pecl-%{_modname}
 Version:	0.1
 Release:	1
 License:	PHP 2.02
@@ -38,20 +39,20 @@ phpize
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{extensionsdir}
 
-install Ecasound-%{version}/modules/ecasound.so $RPM_BUILD_ROOT%{extensionsdir}
+install Ecasound-%{version}/modules/%{_modname}.so $RPM_BUILD_ROOT%{extensionsdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %post
-/usr/sbin/php-module-install install ecasound %{_sysconfdir}/php.ini
+/usr/sbin/php-module-install install %{_modname} %{_sysconfdir}/php.ini
 
 %preun
 if [ "$1" = "0" ]; then
-	/usr/sbin/php-module-install remove ecasound %{_sysconfdir}/php.ini
+	/usr/sbin/php-module-install remove %{_modname} %{_sysconfdir}/php.ini
 fi
 
 %files
 %defattr(644,root,root,755)
 %doc Ecasound-%{version}/{CREDITS,EXPERIMENTAL,*.php}
-%attr(755,root,root) %{extensionsdir}/ecasound.so
+%attr(755,root,root) %{extensionsdir}/%{_modname}.so
