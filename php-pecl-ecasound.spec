@@ -1,8 +1,8 @@
 %define		_modname	ecasound
 %define		_modname_c	Ecasound
 %define		_status		beta
-Summary:	%{_modname} - provides audio recording and processing functions
-Summary(pl):	%{_modname} - dostarcza funkcji do nagrywania i przetwarzania d¼wiêku
+Summary:	%{_modname} - audio recording and processing functions
+Summary(pl):	%{_modname} - funkcje do nagrywania i przetwarzania d¼wiêku
 Name:		php-pecl-%{_modname}
 Version:	0.2
 Release:	1
@@ -16,6 +16,7 @@ BuildRequires:	ecasound-devel
 BuildRequires:	libtool
 BuildRequires:	php-devel
 Requires:	php-common
+Obsoletes:	php-Ecasound
 Obsoletes:	php-pear-%{_modname}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -28,9 +29,11 @@ processing capabilities.
 
 This extension has in PEAR status: %{_status}.
 
-#%description -l pl
-#
-#To rozszerzenie ma w PEAR status: %{_status}.
+%description -l pl
+To rozszerzenie opakowuje biblioteki Ecasound, aby dostarczyæ
+zaawansowane mo¿liwo¶ci przetwarzania d¼wiêku.
+
+To rozszerzenie ma w PEAR status: %{_status}.
 
 %prep
 %setup -q -c
@@ -39,7 +42,7 @@ This extension has in PEAR status: %{_status}.
 %build
 cd %{_modname_c}-%{version}
 phpize
-%configure 
+%configure
 %{__make}
 
 %install
