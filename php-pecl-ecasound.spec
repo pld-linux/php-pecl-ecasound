@@ -8,6 +8,7 @@ License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/Ecasound-%{version}.tgz
 URL:		http://pear.php.net/
+BuildRequires:	automake
 BuildRequires:	libecasound-devel
 BuildRequires:	php-devel
 Obsoletes:	php-Ecasound
