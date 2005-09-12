@@ -6,7 +6,7 @@ Summary(pl):	%{_modname} - funkcje do nagrywania i przetwarzania d¼wiêku
 Name:		php-pecl-%{_modname}
 Version:	0.2
 Release:	1
-License:	PHP 
+License:	PHP
 Group:		Development/Languages/PHP
 Source0:	http://pecl.php.net/get/%{_modname_c}-%{version}.tgz
 # Source0-md5:	002e7bb8c0f018bb41cefc71e5f9f54b
