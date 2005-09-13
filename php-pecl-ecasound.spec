@@ -13,7 +13,6 @@ Source0:	http://pecl.php.net/get/%{_modname_c}-%{version}.tgz
 Patch0:		%{name}-search_path.patch
 URL:		http://pecl.php.net/package/ecasound/
 BuildRequires:	ecasound-devel
-BuildRequires:	libtool
 BuildRequires:	php-devel
 Requires:	php-common
 Obsoletes:	php-Ecasound
