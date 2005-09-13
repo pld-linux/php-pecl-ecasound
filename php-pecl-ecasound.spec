@@ -20,7 +20,7 @@ URL:		http://pecl.php.net/package/ecasound/
 BuildRequires:	ecasound-devel
 BuildRequires:	php-devel >= 3:5.0.0
 BuildRequires:	rpmbuild(macros) >= 1.238
-%requires_php_extension
+%{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
 Obsoletes:	php-Ecasound
 Obsoletes:	php-pear-%{_modname}
