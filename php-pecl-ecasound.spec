@@ -19,7 +19,7 @@ Patch0:		%{name}-search_path.patch
 URL:		http://pecl.php.net/package/ecasound/
 BuildRequires:	ecasound-devel
 BuildRequires:	php-devel >= 3:5.0.0
-BuildRequires:	rpmbuild(macros) >= 1.254
+BuildRequires:	rpmbuild(macros) >= 1.322
 %{?requires_php_extension}
 Requires:	%{_sysconfdir}/conf.d
 Obsoletes:	php-Ecasound
