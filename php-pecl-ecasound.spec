@@ -5,7 +5,7 @@
 %define		_modname_c	Ecasound
 %define		_status		beta
 Summary:	%{_modname} - audio recording and processing functions
-Summary(pl.UTF-8):   %{_modname} - funkcje do nagrywania i przetwarzania dźwięku
+Summary(pl.UTF-8):	%{_modname} - funkcje do nagrywania i przetwarzania dźwięku
 Name:		php-pecl-%{_modname}
 Version:	0.2
 Release:	1.1
