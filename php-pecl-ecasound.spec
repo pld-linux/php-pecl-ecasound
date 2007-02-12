@@ -5,7 +5,7 @@
 %define		_modname_c	Ecasound
 %define		_status		beta
 Summary:	%{_modname} - audio recording and processing functions
-Summary(pl):	%{_modname} - funkcje do nagrywania i przetwarzania d¼wiêku
+Summary(pl.UTF-8):   %{_modname} - funkcje do nagrywania i przetwarzania dÅºwiÄ™ku
 Name:		php-pecl-%{_modname}
 Version:	0.2
 Release:	1.1
@@ -30,9 +30,9 @@ processing capabilities.
 
 In PECL status of this package is: %{_status}.
 
-%description -l pl
-To rozszerzenie opakowuje biblioteki Ecasound, aby dostarczyæ
-zaawansowane mo¿liwo¶ci przetwarzania d¼wiêku.
+%description -l pl.UTF-8
+To rozszerzenie opakowuje biblioteki Ecasound, aby dostarczyÄ‡
+zaawansowane moÅ¼liwoÅ›ci przetwarzania dÅºwiÄ™ku.
 
 To rozszerzenie ma w PECL status: %{_status}.
 
