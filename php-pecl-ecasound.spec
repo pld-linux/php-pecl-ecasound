@@ -23,6 +23,7 @@ BuildRequires:	rpmbuild(macros) >= 1.650
 Requires:	php(core) >= 5.0.4
 Obsoletes:	php-Ecasound
 Obsoletes:	php-pear-%{modname}
+Provides:	php(%{modname}) = %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
