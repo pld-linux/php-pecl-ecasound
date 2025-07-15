@@ -40,7 +40,7 @@ To rozszerzenie ma w PECL status: %{status}.
 
 %prep
 %setup -q -c
-%patch0 -p0
+%patch -P0 -p0
 
 %build
 cd %{modname_c}-%{version}
